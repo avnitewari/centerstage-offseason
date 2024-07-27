@@ -1,15 +1,12 @@
 package treamcode;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
-import RobotUtilities.MovementVars;
-
-public abstract class OpMode {
-
+public abstract class MyOpMode {
     public abstract void init();
-    public abstract void loop(){
+
+    public void loop() {
         ArrayList<curvePoint> allPoints = new ArrayList<>();
-        allPoints.add(new curvePoint(0,0,1.0,50,Math.toRadians(50)));
-        followCurve(allPoints, Math.toRadians(90));
+        allPoints.add(new curvePoint(0, 0, 1.0, 1.0, 50, 0, 0, Math.toRadians(50)));
+        RobotMove.followCurve(allPoints, Math.toRadians(90));
     }
 }

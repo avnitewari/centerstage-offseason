@@ -1,20 +1,12 @@
 package Main;
 
-import RobotUtilities.MovementVars;
 import com.company.ComputerDebugging;
 import com.company.FloatPoint;
 import com.company.Robot;
-import com.company.UdpServer;
-import treamcode.MyOpMode;
-import treamcode.OpMode;
 
-import java.io.IOException;
-import java.net.DatagramPacket;
-import java.net.DatagramSocket;
-import java.net.InetAddress;
+import treamcode.ConcreteOpMode; // Import the concrete subclass
 
-public class  Main {
-
+public class Main {
 
     public static void main(String[] args) {
         new Main().run();
@@ -23,15 +15,13 @@ public class  Main {
     /**
      * The program runs here
      */
-    public void run(){
-        //this is a test of the coding
+    public void run() {
         ComputerDebugging computerDebugging = new ComputerDebugging();
         Robot robot = new Robot();
-        OpMode opMode = new MyOpMode();
+        ConcreteOpMode opMode = new ConcreteOpMode(); // Use the concrete subclass
         opMode.init();
 
         ComputerDebugging.clearLogPoints();
-
 
         long startTime = System.currentTimeMillis();
         try {
@@ -39,8 +29,7 @@ public class  Main {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        while(true){
-
+        while (true) {
             opMode.loop();
 
             try {
@@ -50,12 +39,8 @@ public class  Main {
             }
             robot.update();
             ComputerDebugging.sendRobotLocation(robot);
-            ComputerDebugging.sendLogPoint(new FloatPoint(Robot.worldXPosition,Robot.worldYPosition));
+            ComputerDebugging.sendLogPoint(new FloatPoint(Robot.worldXPosition, Robot.worldYPosition));
             ComputerDebugging.markEndOfUpdate();
         }
     }
-
-
-
-
 }
