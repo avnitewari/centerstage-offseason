@@ -7,12 +7,7 @@
     <bookmark url="file://$PROJECT_DIR$/src/treamcode/MathFunctions.java" line="45" mnemonic="9" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="06f710b7-470c-4d99-91ff-deca9af1f0aa" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/treamcode/I removod this stuff so you have to actually follow the tutorial.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/treamcode/OpMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/treamcode/OpMode.java" afterDir="false" />
-    </list>
+    <list default="true" id="06f710b7-470c-4d99-91ff-deca9af1f0aa" name="Default" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
