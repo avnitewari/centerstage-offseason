@@ -3,7 +3,7 @@ package treamcode;
 public class ConcreteOpMode extends MyOpMode {
     @Override
     public void init() {
-        // Initialize your OpMode here
+        // Initialize OpMode here
     }
 
     @Override
