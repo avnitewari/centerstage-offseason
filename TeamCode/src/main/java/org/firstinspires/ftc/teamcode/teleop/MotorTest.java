@@ -36,8 +36,9 @@ public class MotorTest extends LinearOpMode {
         rearLeft = hardwareMap.get(DcMotorEx.class, "leftRear");
         rearRight = hardwareMap.get(DcMotorEx.class, "rightRear");
 
-        frontLeft.setDirection(DcMotorSimple.Direction.REVERSE);
+        //frontLeft.setDirection(DcMotorSimple.Direction.REVERSE);
         frontRight.setDirection(DcMotorSimple.Direction.REVERSE);
+        rearRight.setDirection(DcMotorSimple.Direction.REVERSE);
 
         frontLeft.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         frontRight.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
