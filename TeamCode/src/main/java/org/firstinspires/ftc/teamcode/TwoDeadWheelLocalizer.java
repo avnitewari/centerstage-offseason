@@ -44,11 +44,15 @@ public final class TwoDeadWheelLocalizer implements Localizer {
 
     public TwoDeadWheelLocalizer(HardwareMap hardwareMap, IMU imu, double inPerTick) {
 
-        xEncoder = new RawEncoder(hardwareMap.get(DcMotorEx.class, "rightFront"));
-        yEncoder = new RawEncoder(hardwareMap.get(DcMotorEx.class, "leftFront"));
+        xEncoder = new RawEncoder(hardwareMap.get(DcMotorEx.class, "leftFront"));
+        yEncoder = new RawEncoder(hardwareMap.get(DcMotorEx.class, "rightFront"));
 
         // TODO: reverse encoder directions if needed
         //   par.setDirection(DcMotorSimple.Direction.REVERSE);
+
+        //xEncoder.setDirection(DcMotorSimple.Direction.REVERSE);
+        //yEncoder.setDirection(DcMotorSimple.Direction.REVERSE);
+
 
         this.imu = imu;
 
@@ -58,8 +62,8 @@ public final class TwoDeadWheelLocalizer implements Localizer {
     }
 
     public Twist2dDual<Time> update() {
-        PositionVelocityPair parPosVel = yEncoder.getPositionAndVelocity();
-        PositionVelocityPair perpPosVel = xEncoder.getPositionAndVelocity();
+        PositionVelocityPair parPosVel = xEncoder.getPositionAndVelocity();
+        PositionVelocityPair perpPosVel = yEncoder.getPositionAndVelocity();
 
         YawPitchRollAngles angles = imu.getRobotYawPitchRollAngles();
         AngularVelocity angularVelocity = imu.getRobotAngularVelocity(AngleUnit.RADIANS);

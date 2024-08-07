@@ -63,7 +63,7 @@ public final class MecanumDrive {
                 RevHubOrientationOnRobot.UsbFacingDirection.FORWARD;
 
         // drive model parameters
-        public double inPerTick = 1;
+        public double inPerTick = 0.00053798;
         public double lateralInPerTick = inPerTick;
         public double trackWidthTicks = 0;
 
@@ -103,6 +103,7 @@ public final class MecanumDrive {
                     kinematics.new WheelVelConstraint(PARAMS.maxWheelVel),
                     new AngularVelConstraint(PARAMS.maxAngVel)
             ));
+
     public final AccelConstraint defaultAccelConstraint =
             new ProfileAccelConstraint(PARAMS.minProfileAccel, PARAMS.maxProfileAccel);
 
